@@ -2,7 +2,7 @@
 
 This is a barebones [Django](https://www.djangoproject.com/) example that can be deployed on [Aptible](https://aptible.com).
 
-The app in this repo is deployed at [http://app-52709.on-aptible.com/](http://app-52709.on-aptible.com/).
+The app in this repo is deployed at [https://app-52709.on-aptible.com/](https://app-52709.on-aptible.com/).
 
 ## Deployment
 
