@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-b!72b7$)2wo^sgb_*wctsx#jl^c^-(gczp*f&0^=oj+=&$s45@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Assumed that the default managed endpoint is being created
+ALLOWED_HOSTS = ['.aptible.in']
 
 
 # Application definition
