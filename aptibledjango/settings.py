@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-b!72b7$)2wo^sgb_*wctsx#jl^c^-(gczp*f&0^=oj+=&$s45@
 DEBUG = True
 
 # Assumed that the default managed endpoint is being created
-ALLOWED_HOSTS = ['.aptible.in']
+ALLOWED_HOSTS = ['.on-aptible.com']
 
 
 # Application definition
