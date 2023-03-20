@@ -29,7 +29,15 @@ aptible apps:create "$APP_HANDLE"
 git remote add aptible "$GIT_REMOTE"
 git push aptible main
 ```
-5. Create a default endpoint for the `CMD` service using the [aptible endpoints:https:create](https://deploy-docs.aptible.com/docs/cli-endpoints-https-create) CLI command:
+
+5. Create and set a `SECRET_KEY` to use with Django:
+
+```shell
+# Generate a secret key, then set it as a configuration variable in Aptible
+aptible config:set --app "$APP_HANDLE" SECRET_KEY="$SECRET_KEY"
+```
+
+6. Create a default endpoint for the `CMD` service using the [aptible endpoints:https:create](https://deploy-docs.aptible.com/docs/cli-endpoints-https-create) CLI command:
 
 ```shell
 # Substitute $APP_HANDLE with the app name
