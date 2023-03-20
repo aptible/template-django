@@ -21,20 +21,21 @@ Please complete the following steps before moving forward:
 aptible apps:create "$APP_HANDLE"
 ``` 
 3. Once provisioned, copy the App's [Git Remote](https://deploy-docs.aptible.com/docs/git-remote) from the Dashboard or when it is returned in the CLI. The Remote will be referred to as `$GIT_REMOTE` moving forward.
-4. Push the cloned repository to the Aptible Git Remote:
+
+4. Create and set a `SECRET_KEY` to use with Django:
+
+```shell
+# Generate a secret key, then set it as a configuration variable in Aptible
+aptible config:set --app "$APP_HANDLE" SECRET_KEY="$SECRET_KEY"
+```
+
+5. Push the cloned repository to the Aptible Git Remote:
 
 ```shell
 # Substitute $GIT_REMOTE with the copied Git Remote in step 3
 
 git remote add aptible "$GIT_REMOTE"
 git push aptible main
-```
-
-5. Create and set a `SECRET_KEY` to use with Django:
-
-```shell
-# Generate a secret key, then set it as a configuration variable in Aptible
-aptible config:set --app "$APP_HANDLE" SECRET_KEY="$SECRET_KEY"
 ```
 
 6. Create a default endpoint for the `CMD` service using the [aptible endpoints:https:create](https://deploy-docs.aptible.com/docs/cli-endpoints-https-create) CLI command:
