@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+handler500 = 'aptible_landing.views.handler500'
 urlpatterns = [
     path('', include('aptible_landing.urls')),
     path('admin/', admin.site.urls),
