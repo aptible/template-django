@@ -30,6 +30,9 @@ DEBUG = False
 # Assumed that the default managed endpoint is being created
 ALLOWED_HOSTS = ['.on-aptible.com']
 
+# Update CSRF_TRUSTED_ORIGINS so you can access the /admin/ page
+CSRF_TRUSTED_ORIGINS = ['https://*.on-aptible.com', 'http://*.on-aptible.com']
+
 
 # Application definition
 
