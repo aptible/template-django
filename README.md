@@ -64,14 +64,7 @@ aptible db:create "$DB_HANDLE" --type postgresql
 
 2. Copy the connection string returned by `aptible db:create` command on success. This is a [Database Credential](https://deploy-docs.aptible.com/docs/database-credentials) which is needed to configure your App. This connection string can also be accessed in the Dashboard by clicking on Reveal under Credentials in the database page.  Going forward in this document, we'll refer to the Credential as `$DATABASE_URL`.
 
-3. Setup database migrations to run upon deploy to ensure your app code and database are in sync. You can tell Aptible to run your migrations by adding a [`.aptible.yml`](https://deploy-docs.aptible.com/docs/aptible-yml) file in your cloned repository. The file should be named `.aptible.yml`, and found at the root of your repository. Here is a sample `.aptible.yml` file to automate Database migrations:
-
-```yaml
-before_release:
-  - python manage.py migrate
-```
-
-4. [Configure the App](https://deploy-docs.aptible.com/docs/configuration) to point it the newly provisioned Database by adding the required environment variable. Use the [`aptible config:set`](https://deploy-docs.aptible.com/docs/cli-config-set) command as documented below, substituting `$APP_HANDLE` and `$DATABASE_URL` with their proper values.
+3. [Configure the App](https://deploy-docs.aptible.com/docs/configuration) to point it the newly provisioned Database by adding the required environment variable. Use the [`aptible config:set`](https://deploy-docs.aptible.com/docs/cli-config-set) command as documented below, substituting `$APP_HANDLE` and `$DATABASE_URL` with their proper values.
 
 ```shell
 aptible config:set --app "$APP_HANDLE" \
