@@ -10,8 +10,15 @@ This is a barebones [Django](https://www.djangoproject.com/) example deployed on
 ## Configuration
 
 The only thing the user needs to do is create and set `SECRET_KEY` environment
-variable.
+variable during onboarding flow.
 
 ```bash
 python3 -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
+```
+
+If you already created the app and just want to apply an environment variable,
+you can use our [cli tool](https://www.aptible.com/docs/cli):
+
+```bash
+aptible config:set --app "$APP_HANDLE" SECRET_KEY="xxx"
 ```
