@@ -1,2 +1,2 @@
 before_release:
-  - python manage.py migrate
+  - manage.py migrate
